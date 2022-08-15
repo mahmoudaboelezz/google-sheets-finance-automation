@@ -6,10 +6,8 @@ from spreadsheetid import SPREADSHEET_ID
 if __name__ == "__main__":
     service = su.create_authorized_service()
     # su.create_sheet(service)
-    try:
-        sid = SPREADSHEET_ID
-    except:
-        sid = "Enter your spreadsheet id here"
+
+    sid = SPREADSHEET_ID
 
     data = get_data()
 

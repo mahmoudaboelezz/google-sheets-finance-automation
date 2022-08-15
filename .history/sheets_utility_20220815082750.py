@@ -101,7 +101,7 @@ def format_cells(service, spreadsheet_id, sheetId=0):
                         "userEnteredFormat": {
                             "numberFormat": {
                                 "type": "CURRENCY",
-                                "pattern": '"EGP"#,##0.00',
+                                "pattern": '"$"#,##0.00',
                             }
                         }
                     },

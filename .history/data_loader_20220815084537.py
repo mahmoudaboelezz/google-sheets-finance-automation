@@ -14,8 +14,8 @@ class CATEGORY(Enum):
     SHOPPING = "تسوق"
     HOUSING = "مصاريف المنزل"
     ENTERTAINMENT = "رفاهية"
-    SAVES = "مدخرات"
-    INVESTMENT = "أستثمار"
+    Savings = "مدخرات"
+    Investment = "أستثمار"
 
 
 class IMPORTANCE(Enum):
@@ -57,10 +57,6 @@ class Expense:
             return CATEGORY.HOUSING, IMPORTANCE.ESSENTIAL
         if "internet" in item:
             return CATEGORY.PHONE, IMPORTANCE.ESSENTIAL
-        if 'investment' in item:
-            return CATEGORY.INVESTMENT, IMPORTANCE.ESSENTIAL
-        if 'saving' in item:
-            return CATEGORY.SAVES, IMPORTANCE.NICE_TO_HAVE
         return CATEGORY.MISC, IMPORTANCE.NICE_TO_HAVE
 
 

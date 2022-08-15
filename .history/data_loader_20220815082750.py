@@ -2,20 +2,18 @@ import csv
 from enum import Enum
 
 class CATEGORY(Enum):
-    FEES = "كهربا وغاز"
-    EATING_OUT = "خروجات"
-    SELF_DEVELOPMENT = "تطوير ذات وأدوات عمل"
-    FOOD = "الأكل"
-    HEALTH = "الصحة"
-    PHONE = "باقة الموبايل والانترنت"
-    CAR = "بنزين واصلاحات"
-    CLOTHES = "ملابس"
-    MISC = "تكاليف خاصة بالعمل"
-    SHOPPING = "تسوق"
-    HOUSING = "مصاريف المنزل"
-    ENTERTAINMENT = "رفاهية"
-    SAVES = "مدخرات"
-    INVESTMENT = "أستثمار"
+    FEES = "Fees"
+    EATING_OUT = "Eating Out"
+    SELF_DEVELOPMENT = "Self Development"
+    FOOD = "Food"
+    HEALTH = "Health"
+    PHONE = "Phone/Internet"
+    CAR = "Car"
+    CLOTHES = "Clothes"
+    MISC = "Misc."
+    SHOPPING = "Shopping"
+    HOUSING = "Housing"
+    ENTERTAINMENT = "Entertainment"
 
 
 class IMPORTANCE(Enum):
@@ -35,7 +33,7 @@ class Expense:
         item = self.item.lower()
         if "fee" in item:
             return CATEGORY.FEES, IMPORTANCE.SHOULDNT_HAVE
-        if "uber eats" in item or "pizza" in item or "date" in item:
+        if "uber eats" in item or "pizza" in item:
             return CATEGORY.EATING_OUT, IMPORTANCE.NICE_TO_HAVE
         if "book" in item:
             return CATEGORY.SELF_DEVELOPMENT, IMPORTANCE.NICE_TO_HAVE
@@ -45,7 +43,7 @@ class Expense:
             return CATEGORY.HEALTH, IMPORTANCE.HAVE_TO_HAVE
         if "phone" in item:
             return CATEGORY.PHONE, IMPORTANCE.ESSENTIAL
-        if  "car" in item:
+        if "gas" in item or "car" in item:
             return CATEGORY.CAR, IMPORTANCE.HAVE_TO_HAVE
         if "clothes" in item:
             return CATEGORY.CLOTHES, IMPORTANCE.NICE_TO_HAVE
@@ -53,14 +51,8 @@ class Expense:
             return CATEGORY.ENTERTAINMENT, IMPORTANCE.NICE_TO_HAVE
         if "ikea" in item:
             return CATEGORY.SHOPPING, IMPORTANCE.NICE_TO_HAVE
-        if "house" in item:
+        if "rent" in item:
             return CATEGORY.HOUSING, IMPORTANCE.ESSENTIAL
-        if "internet" in item:
-            return CATEGORY.PHONE, IMPORTANCE.ESSENTIAL
-        if 'investment' in item:
-            return CATEGORY.INVESTMENT, IMPORTANCE.ESSENTIAL
-        if 'saving' in item:
-            return CATEGORY.SAVES, IMPORTANCE.NICE_TO_HAVE
         return CATEGORY.MISC, IMPORTANCE.NICE_TO_HAVE
 
 

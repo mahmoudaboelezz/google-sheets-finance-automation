@@ -1,15 +1,12 @@
 import sheets_utility as su
 from data_loader import get_data
-from spreadsheetid import SPREADSHEET_ID
 
 
 if __name__ == "__main__":
     service = su.create_authorized_service()
     # su.create_sheet(service)
-    try:
-        sid = SPREADSHEET_ID
-    except:
-        sid = "Enter your spreadsheet id here"
+
+    sid = "1YuF9TbzPPBg1j5LZWh7CNN8bqmrB7MENcdGZf-P-F8Q"
 
     data = get_data()
 

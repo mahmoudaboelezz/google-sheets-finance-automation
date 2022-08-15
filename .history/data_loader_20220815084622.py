@@ -60,7 +60,7 @@ class Expense:
         if 'investment' in item:
             return CATEGORY.INVESTMENT, IMPORTANCE.ESSENTIAL
         if 'saving' in item:
-            return CATEGORY.SAVES, IMPORTANCE.NICE_TO_HAVE
+            return CATEGORY.SAVES, IMPORTANCE.ESSENTIAL
         return CATEGORY.MISC, IMPORTANCE.NICE_TO_HAVE
 
 
